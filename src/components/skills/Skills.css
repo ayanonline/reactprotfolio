@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 600px) {
   .skill-item {
-    width: 150px;
+    width: 130px;
     height: 80px;
   }
   .skill-item > img {
