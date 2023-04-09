@@ -1,0 +1,10 @@
+.footer {
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(54, 54, 54);
+  color: #fff;
+}
+#copyright {
+  margin-bottom: -50px;
+}
