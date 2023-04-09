@@ -1,10 +1,32 @@
 .footer {
-  padding: 40px;
-  display: flex;
-  justify-content: space-around;
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(38, 34, 34);
   color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 60px;
 }
-#copyright {
-  margin-bottom: -50px;
+.left > div {
+  display: flex;
+  align-items: center;
+}
+.inner-left > div {
+  padding: 15px;
+}
+.right > div {
+  padding: 10px;
+}
+.ficon {
+  height: 35px;
+}
+.follow > a {
+  margin: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .left {
+    margin: 15px 0;
+  }
 }

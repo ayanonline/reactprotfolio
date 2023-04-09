@@ -18,9 +18,10 @@ function About() {
               <img className="icon" src={ARCIcon} alt="An image" />
               <div>
                 <p>
-                  Intern
+                  <b>Intern</b>
                   <br />
-                  ARC Document Solutions India Private Limited <br />
+                  <b>ARC Document Solutions India Private Limited</b>
+                  <br />
                   Nov 2021 - Jun 2022 .8 months
                   <br />
                   Kolkata, West Bengal, India
@@ -36,7 +37,7 @@ function About() {
                 <div>
                   <h3>Brainware University</h3>
                   <p>
-                    MCA
+                    <b>MCA</b>
                     <br />
                     Aug 2022 - Aug 2024
                   </p>
@@ -47,7 +48,7 @@ function About() {
                 <div>
                   <h3>Brainware University</h3>
                   <p>
-                    BCA
+                    <b>BCA</b>
                     <br />
                     2019 - 2022
                   </p>
@@ -58,11 +59,11 @@ function About() {
 
           <div className="address">
             <p>
-              Address: Hooghly, West Bengal, India
+              <b>Address:</b> Hooghly, West Bengal, India
               <br />
-              Phone No: 7477446714
+              <b>Phone No:</b> 7477446714
               <br />
-              Email: ayanghosh1389@gmail.com
+              <b>Email:</b> ayanghosh1389@gmail.com
             </p>
           </div>
         </div>

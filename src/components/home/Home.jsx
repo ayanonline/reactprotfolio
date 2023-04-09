@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import mypic from "../../assets/myPhoto.png";
+import mypic2 from "../../assets/about.png";
 import wpIcon from "../../assets/whatsapp.png";
 import gmailIcon from "../../assets/gmail.png";
 import linkedinIcon from "../../assets/linkedin.png";
@@ -10,12 +11,15 @@ import SocialBtn from "../socialbutton/SocialBtn";
 function Home() {
   const socialItem = [
     { img: wpIcon, url: "https://wa.me/7477446714?text=" },
-    { img: gmailIcon, url: "https://github.com/ayanonline" },
+    { img: gmailIcon, url: "ayanghosh1389@gmail.com" },
     { img: linkedinIcon, url: "https://www.linkedin.com/in/ayanonline/" },
     { img: gitHubIcon, url: "https://github.com/ayanonline" },
   ];
   return (
     <div className="home-container">
+      <div className="image">
+        <img src={mypic2} alt="this is my photo" />
+      </div>
       <div className="intro">
         <h1>
           Hi 👋
@@ -30,9 +34,6 @@ function Home() {
             <SocialBtn key={index} src={item.img} url={item.url} />
           ))}
         </div>
-      </div>
-      <div className="image">
-        <img src={mypic} alt="this is my photo" />
       </div>
     </div>
   );

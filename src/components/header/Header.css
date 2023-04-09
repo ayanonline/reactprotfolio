@@ -6,7 +6,7 @@
   cursor: pointer;
 }
 .res-nav-item > img {
-  height: 50px;
+  height: 35px;
 }
 .menu {
   position: fixed;
@@ -42,11 +42,11 @@
   box-shadow: 1px 5px 5px 3px rgba(0, 0, 0, 0.2);
 }
 .logo {
-  padding: 20px 40px;
+  padding: 20px 20px;
 }
 .logo > h3 {
   font-family: "Permanent Marker", cursive;
-  color: rgb(118, 118, 118);
+  color: rgb(0, 0, 0);
   font-size: 30px;
   letter-spacing: 5px;
   text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.2);
@@ -92,5 +92,8 @@
   }
   .res-nav-item {
     display: block;
+  }
+  .logo > h3 {
+    font-size: 20px;
   }
 }
