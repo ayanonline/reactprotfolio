@@ -45,16 +45,24 @@ function Header() {
         <div className="menu">
           <ul className="nav-ul">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink onClick={clichHandle} to="/">
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink onClick={clichHandle} to="/about">
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/skills">Skills</NavLink>
+              <NavLink onClick={clichHandle} to="/skills">
+                Skills
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/Projects">Projects</NavLink>
+              <NavLink onClick={clichHandle} to="/Projects">
+                Projects
+              </NavLink>
             </li>
           </ul>
         </div>
