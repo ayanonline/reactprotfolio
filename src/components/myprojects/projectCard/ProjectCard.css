@@ -1,0 +1,55 @@
+.p-card {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.thbnail {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 250px;
+}
+.thbnail > img {
+  height: 200px;
+  width: 250px;
+}
+.thbnail > span {
+  position: relative;
+  padding: 20px;
+  background-color: black;
+  opacity: 80%;
+  color: #fff;
+  position: relative;
+  bottom: 60px;
+}
+.p-card > button {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: rgb(255, 179, 3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.p-card > button:hover {
+  color: rgb(255, 179, 3);
+  background-color: #fff;
+  border: 2px solid rgb(255, 179, 3);
+}
+
+@media only screen and (max-width: 600px) {
+  .thbnail {
+    height: 180px;
+    width: 230px;
+  }
+  .thbnail > img {
+    height: 180px;
+    width: 230px;
+  }
+}

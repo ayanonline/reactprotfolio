@@ -1,0 +1,14 @@
+.recent-project {
+  padding: 40px 20px;
+}
+
+.r-heading > h2,
+p {
+  text-align: center;
+}
+.p-div {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

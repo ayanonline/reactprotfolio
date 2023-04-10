@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Home.css";
 import mypic from "../../assets/myPhoto.png";
 import mypic2 from "../../assets/about.png";
@@ -7,6 +7,7 @@ import gmailIcon from "../../assets/gmail.png";
 import linkedinIcon from "../../assets/linkedin.png";
 import gitHubIcon from "../../assets/github.png";
 import SocialBtn from "../socialbutton/SocialBtn";
+import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 
 function Home() {
   const socialItem = [
@@ -16,26 +17,29 @@ function Home() {
     { img: gitHubIcon, url: "https://github.com/ayanonline" },
   ];
   return (
-    <div className="home-container">
-      <div className="image">
-        <img src={mypic2} alt="this is my photo" />
-      </div>
-      <div className="intro">
-        <h1>
-          Hi 👋
-          <br /> I'm Ayan Ghosh
-        </h1>
-        <p>
-          I am very happy person. <br />A passionate Web developer from India.
-        </p>
+    <Fragment>
+      <div className="home-container">
+        <div className="image">
+          <img src={mypic2} alt="this is my photo" />
+        </div>
 
-        <div className="social">
-          {socialItem.map((item, index) => (
-            <SocialBtn key={index} src={item.img} url={item.url} />
-          ))}
+        <div className="intro">
+          <h1>
+            Hi 👋
+            <br /> I'm Ayan Ghosh
+          </h1>
+          <p>
+            I am very happy person. <br />A passionate Web developer from India.
+          </p>
+          <div className="social">
+            {socialItem.map((item, index) => (
+              <SocialBtn key={index} src={item.img} url={item.url} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <RecentProjects />
+    </Fragment>
   );
 }
 
