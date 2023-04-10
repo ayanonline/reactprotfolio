@@ -2,12 +2,11 @@
   padding: 40px 20px;
 }
 
-.r-heading > h2,
-p {
+.r-heading {
   text-align: center;
 }
 .p-div {
-  margin: 20px 0;
+  margin: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

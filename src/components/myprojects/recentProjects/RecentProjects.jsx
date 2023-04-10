@@ -24,9 +24,11 @@ function RecentProjects() {
   ]);
   return (
     <div className="recent-project">
-      <div className="r-heading">
-        <h2>Recent projects</h2>
-        <p>Some recent projects which I build using tranding technologies</p>
+      <div>
+        <h2 className="r-heading">Recent projects</h2>
+        <p className="r-heading">
+          Some recent projects which I build using tranding technologies
+        </p>
       </div>
       <div className="p-div">
         {projects.map((project, index) => (
