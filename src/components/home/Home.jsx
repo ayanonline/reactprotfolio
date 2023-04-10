@@ -9,6 +9,7 @@ import gitHubIcon from "../../assets/github.png";
 import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 import TopSkills from "../skills/TopSkills";
+import Typewriter from "typewriter-effect";
 
 function Home() {
   const socialItem = [
@@ -26,9 +27,27 @@ function Home() {
         </div>
 
         <div className="intro">
+          <h1>Hi 👋</h1>
           <h1>
-            Hi 👋
-            <br /> I'm Ayan Ghosh
+            <Typewriter
+              options={{
+                strings: [
+                  "I'm Ayan Ghosh",
+                  "From kolkata",
+                  "I'm pursuing MCA",
+                  "React is awesome",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("I'm Ayan Ghosh")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .start();
+              }}
+            />
           </h1>
           <p>
             I am very happy person. <br />A passionate Web developer from India.
