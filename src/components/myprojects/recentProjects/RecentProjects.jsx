@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./RecentProjects.css";
 import ProjectCard from "../projectCard/ProjectCard";
-import ecomsnap from "../../../assets/ecommerce.png";
-import moviesnap from "../../../assets/movie.png";
-import todosnap from "../../../assets/todoApp.png";
+import ecomsnap from "../../../assets/ecommerce.webp";
+import moviesnap from "../../../assets/movie.webp";
+import todosnap from "../../../assets/todoApp.webp";
 function RecentProjects() {
   const [projects, setProjects] = useState([
     {

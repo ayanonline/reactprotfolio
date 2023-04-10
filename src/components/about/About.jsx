@@ -1,8 +1,8 @@
 import React from "react";
 import "./About.css";
-import ARCIcon from "../../assets/arc.jpg";
+import ARCIcon from "../../assets/arc.webp";
 import aboutImage from "../../assets/about.png";
-import UniversityIcon from "../../assets/university.jpg";
+import UniversityIcon from "../../assets/university.webp";
 function About() {
   return (
     <div className="about-container">

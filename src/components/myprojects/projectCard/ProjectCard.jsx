@@ -1,6 +1,5 @@
 import React from "react";
 import "./ProjectCard.css";
-import ecomSnap from "../../../assets/ecommerce.png";
 function ProjectCard(props) {
   return (
     <div className="p-card">

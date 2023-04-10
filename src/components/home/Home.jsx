@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./Home.css";
 import mypic from "../../assets/myPhoto.png";
 import mypic2 from "../../assets/about.png";
@@ -8,6 +8,7 @@ import linkedinIcon from "../../assets/linkedin.png";
 import gitHubIcon from "../../assets/github.png";
 import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
+import TopSkills from "../skills/TopSkills";
 
 function Home() {
   const socialItem = [
@@ -16,6 +17,7 @@ function Home() {
     { img: linkedinIcon, url: "https://www.linkedin.com/in/ayanonline/" },
     { img: gitHubIcon, url: "https://github.com/ayanonline" },
   ];
+
   return (
     <Fragment>
       <div className="home-container">
@@ -39,6 +41,7 @@ function Home() {
         </div>
       </div>
       <RecentProjects />
+      <TopSkills />
     </Fragment>
   );
 }
