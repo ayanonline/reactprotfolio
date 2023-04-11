@@ -28,7 +28,10 @@ function Header() {
               <NavLink to="/skills">Skills</NavLink>
             </li>
             <li>
-              <NavLink to="/Projects">Projects</NavLink>
+              <NavLink to="/projects">Projects</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blogs">Blogs</NavLink>
             </li>
           </ul>
           <button>Contact me</button>
@@ -62,6 +65,11 @@ function Header() {
             <li>
               <NavLink onClick={clichHandle} to="/Projects">
                 Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink onClick={clichHandle} to="/blogs">
+                Blogs
               </NavLink>
             </li>
           </ul>
