@@ -26,8 +26,10 @@ function TopSkills() {
             />
           );
         })}
-        <NavLink to="/skills">view all skills</NavLink>
       </div>
+      <NavLink to="/skills" id="view-all-skill">
+        <button className="btn">view all skills</button>
+      </NavLink>
     </div>
   );
 }

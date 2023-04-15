@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./RecentProjects.css";
+import { NavLink } from "react-router-dom";
 import ProjectCard from "../projectCard/ProjectCard";
 import ecomsnap from "../../../assets/ecommerce.webp";
 import moviesnap from "../../../assets/movie.webp";
@@ -35,6 +36,9 @@ function RecentProjects() {
           <ProjectCard key={index} img={project.image} title={project.title} />
         ))}
       </div>
+      <NavLink to="/projects" id="view-all-skill">
+        <button className="btn">view all projects</button>
+      </NavLink>
     </div>
   );
 }

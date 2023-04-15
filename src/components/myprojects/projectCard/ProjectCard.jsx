@@ -4,10 +4,10 @@ function ProjectCard(props) {
   return (
     <div className="p-card">
       <div className="thbnail">
-        <img src={props.img} alt="" />
-        <span>{props.title}</span>
+        <img className="card-img" src={props.img} alt="" />
+        <div className="overlay">{props.title}</div>
       </div>
-      <button>More details</button>
+      <button className="btn">More details</button>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 .p-card {
   margin: 20px;
   padding: 10px;
-  border: 1px solid gray;
-  border-radius: 5px;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
   height: 250px;
   width: 250px;
   display: flex;
@@ -15,32 +14,28 @@
   flex-direction: column;
   height: 200px;
   width: 250px;
+  cursor: pointer;
 }
-.thbnail > img {
+
+.card-img {
   height: 200px;
   width: 250px;
 }
-.thbnail > span {
+.overlay {
   position: relative;
+  height: 0px;
   padding: 20px;
   background-color: black;
-  opacity: 80%;
+  opacity: 0%;
   color: #fff;
   position: relative;
   bottom: 60px;
+  transition: 0.8s;
+  transition-timing-function: ease;
 }
-.p-card > button {
-  padding: 10px 20px;
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: rgb(255, 179, 3);
-  border-radius: 5px;
-  cursor: pointer;
-}
-.p-card > button:hover {
-  color: rgb(255, 179, 3);
-  background-color: #fff;
-  border: 2px solid rgb(255, 179, 3);
+.thbnail:hover .overlay {
+  height: 50px;
+  opacity: 90%;
 }
 
 @media only screen and (max-width: 600px) {

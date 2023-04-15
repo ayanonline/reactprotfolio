@@ -28,27 +28,7 @@ function Home() {
 
         <div className="intro">
           <h1>Hi 👋</h1>
-          <h1>
-            <Typewriter
-              options={{
-                strings: [
-                  "I'm Ayan Ghosh",
-                  "From kolkata",
-                  "I'm pursuing MCA",
-                  "React is awesome",
-                ],
-                autoStart: true,
-                loop: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("I'm Ayan Ghosh")
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .start();
-              }}
-            />
-          </h1>
+          <h1>I am Ayan Ghosh</h1>
           <p>
             I am very happy person. <br />A passionate Web developer from India.
           </p>

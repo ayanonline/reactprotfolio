@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Knewave&family=Permanent+Marker&display=swap");
 .home-container {
   display: flex;
-  /* background-image: linear-gradient(
-    to right top,
-    #83e4ff,
-    #c3f1ff,
-    #d3eefd,
-    #fffcfe,
-    #ffffff,
-    #ffffff,
-    #ffffff
-  ); */
   background-image: url("../../assets/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -59,6 +49,15 @@
     line-height: 60px;
   }
   .image > img {
-    height: 400px;
+    height: 200px;
+  }
+  .image {
+    background-image: url("../../assets/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .home-container {
+    display: flex;
+    background-image: none;
   }
 }

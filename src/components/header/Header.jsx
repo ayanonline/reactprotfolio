@@ -34,7 +34,7 @@ function Header() {
               <NavLink to="/blogs">Blogs</NavLink>
             </li>
           </ul>
-          <button>Contact me</button>
+          <button className="btn">Contact me</button>
         </div>
         <div onClick={clichHandle} className="res-nav-item">
           {menuvisible ? (
