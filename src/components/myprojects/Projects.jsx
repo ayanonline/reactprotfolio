@@ -17,6 +17,12 @@ function Projects() {
       details: [],
     },
     {
+      url: "https://yt-download-ayan.netlify.app/",
+      image: ytdownloadsnap,
+      title: "Youtube video downloder (React js)",
+      details: [],
+    },
+    {
       url: "https://ayan-movie.netlify.app/",
       image: moviesnap,
       title: "Movie search (React js)",
@@ -38,12 +44,6 @@ function Projects() {
       url: "https://ayan-keeper.netlify.app/",
       image: keepersnap,
       title: "KeeperApp (React js)",
-      details: [],
-    },
-    {
-      url: "https://yt-download-ayan.netlify.app/",
-      image: ytdownloadsnap,
-      title: "Youtube video downloder (React js)",
       details: [],
     },
   ]);
