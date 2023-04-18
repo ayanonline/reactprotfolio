@@ -4,22 +4,25 @@ import { NavLink } from "react-router-dom";
 import ProjectCard from "../projectCard/ProjectCard";
 import ecomsnap from "../../../assets/ecommerce.webp";
 import moviesnap from "../../../assets/movie.webp";
-import todosnap from "../../../assets/todoApp.webp";
+import ytdownloadsnap from "../../../assets/ytdownload.webp";
 function RecentProjects() {
   const [projects, setProjects] = useState([
     {
+      url: "#",
       image: ecomsnap,
       title: "E-commerce(mern)",
       details: [],
     },
     {
-      image: moviesnap,
-      title: "Movie search (React js)",
+      url: "https://yt-download-ayan.netlify.app/",
+      image: ytdownloadsnap,
+      title: "Youtube video downloder (React js)",
       details: [],
     },
     {
-      image: todosnap,
-      title: "TodoApp (React js)",
+      url: "https://ayan-movie.netlify.app/",
+      image: moviesnap,
+      title: "Movie search (React js)",
       details: [],
     },
   ]);
@@ -33,7 +36,12 @@ function RecentProjects() {
       </div>
       <div className="p-div">
         {projects.map((project, index) => (
-          <ProjectCard key={index} img={project.image} title={project.title} />
+          <ProjectCard
+            key={index}
+            img={project.image}
+            title={project.title}
+            url={project.url}
+          />
         ))}
       </div>
       <NavLink to="/projects" id="view-all-skill">
