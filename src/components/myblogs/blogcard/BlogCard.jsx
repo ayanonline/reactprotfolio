@@ -1,6 +1,7 @@
 import React from "react";
 import "./BlogCard.css";
 function BlogCard({ blog }) {
+  const filename = blog.image;
   return (
     <div className="blog-card">
       <div className="blog-img">
