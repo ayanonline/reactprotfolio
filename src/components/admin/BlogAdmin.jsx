@@ -31,7 +31,7 @@ function BlogAdmin() {
     formData.append("content", content);
     formData.append("photo", file);
 
-    fetch("http://localhost:3000/api/v1/blogs", {
+    fetch("https://blog-xh2n.onrender.com/api/v1/blogs", {
       method: "POST",
       body: formData,
     })
