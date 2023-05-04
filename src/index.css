@@ -19,3 +19,9 @@
   background-color: #fff;
   border: 2px solid rgb(255, 179, 3);
 }
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    padding: 5px 15px;
+  }
+}
