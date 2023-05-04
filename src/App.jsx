@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/myprojects/Projects";
 import Blogs from "./components/myblogs/Blogs";
+import BlogAdmin from "./components/admin/BlogAdmin";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/rdjislove" element={<BlogAdmin />} />
       </Routes>
       <Footer />
     </Router>

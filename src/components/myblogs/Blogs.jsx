@@ -19,11 +19,17 @@ function Blogs() {
   }, []);
 
   return (
-    <div className="blog-container">
-      {blogData.map((blog, index) => (
-        <BlogCard blog={blog} key={index} />
-      ))}
-    </div>
+    <>
+      {blogData.length < 1 ? (
+        <span>Loading</span>
+      ) : (
+        <div className="blog-container">
+          {blogData.map((blog, index) => (
+            <BlogCard blog={blog} key={index} />
+          ))}
+        </div>
+      )}
+    </>
   );
 }
 
