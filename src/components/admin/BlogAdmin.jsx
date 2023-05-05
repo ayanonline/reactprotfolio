@@ -1,7 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BlogAdmin.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 function BlogAdmin() {
+  const [blogData, setBlogData] = useState([]);
+  const options = {
+    method: "GET",
+    // url: "http://localhost:3000/api/v1/blogs/",
+    url: "https://blog-xh2n.onrender.com/api/v1/blogs",
+  };
+  const getData = async () => {
+    const { data } = await axios.request(options);
+    setBlogData(data.data);
+  };
+
+  useEffect(() => {
+    document.title = "Blog-Admin";
+    getData();
+  }, [deleteHnadler]);
+
+  const toastOptions = {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progressStyle: { backgroundColor: "#fff" },
+    toastStyle: { zIndex: 9999 },
+  };
+
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
@@ -36,53 +66,91 @@ function BlogAdmin() {
       body: formData,
     })
       .then((response) => {
-        setMessage("Blog is created successfully ✨🎈");
+        toast("Blog is created successfully✨🎈");
         setAuthor("");
         setTitle("");
         setContent("");
         setFile(null);
       })
       .catch((error) => {
-        console.log(error.message);
+        toast(error.message);
+        setAuthor("");
+        setTitle("");
+        setContent("");
+        setFile(null);
       });
   };
-
+  async function deleteHnadler(id) {
+    await axios
+      .delete(`https://blog-xh2n.onrender.com/api/v1/blogs/blog/${id}`)
+      .then((response) => {
+        toast("Blog is deleted");
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  }
   return (
     <>
-      <form className="create-blog" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={handleTitleChange}
-          />
+      <div className="container">
+        <ToastContainer {...toastOptions} />
+        <form className="create-blog" onSubmit={handleSubmit}>
+          <div className="input">
+            <label htmlFor="title">Title:</label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={handleTitleChange}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="author">author:</label>
+            <input
+              type="text"
+              id="author"
+              value={author}
+              onChange={handleAuthorChange}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="content">Content:</label>
+            <textarea
+              id="content"
+              value={content}
+              onChange={handleContentChange}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="file">File:</label>
+            <input type="file" id="file" onChange={handleFileChange} />
+          </div>
+          <div className="input">
+            <button className="btn" type="submit">
+              Upload
+            </button>
+          </div>
+        </form>
+        <div className="display">
+          <h2>All blogs</h2>
+          {blogData.map((blog, index) => {
+            return (
+              <div key={index}>
+                <label htmlFor="">
+                  {index + 1}. {blog.title}
+                </label>
+                <button
+                  onClick={() => {
+                    deleteHnadler(blog._id);
+                  }}
+                >
+                  delete
+                </button>
+              </div>
+            );
+          })}
         </div>
-        <div>
-          <label htmlFor="author">author:</label>
-          <input
-            type="text"
-            id="author"
-            value={author}
-            onChange={handleAuthorChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="content">Content:</label>
-          <textarea
-            id="content"
-            value={content}
-            onChange={handleContentChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="file">File:</label>
-          <input type="file" id="file" onChange={handleFileChange} />
-        </div>
-        <button type="submit">Upload</button>
-      </form>
-      <label htmlFor="">{message}</label>
+      </div>
     </>
   );
 }

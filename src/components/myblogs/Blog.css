@@ -3,3 +3,26 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.heading {
+  height: 100px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading > h2 {
+  font-size: 50px;
+  color: #6b6b6b;
+}
+.heading > h3 {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading > h2 {
+    font-size: 30px;
+  }
+}

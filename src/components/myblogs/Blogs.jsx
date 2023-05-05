@@ -20,15 +20,15 @@ function Blogs() {
 
   return (
     <>
-      {blogData.length < 1 ? (
-        <span>Loading</span>
-      ) : (
-        <div className="blog-container">
-          {blogData.map((blog, index) => (
-            <BlogCard blog={blog} key={index} />
-          ))}
-        </div>
-      )}
+      <div className="heading">
+        <h2>Welcome to my blog</h2>
+        <h3>Some recent posts</h3>
+      </div>
+      <div className="blog-container">
+        {blogData.map((blog, index) => (
+          <BlogCard blog={blog} key={index} />
+        ))}
+      </div>
     </>
   );
 }
