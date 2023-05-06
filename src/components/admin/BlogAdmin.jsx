@@ -9,7 +9,8 @@ function BlogAdmin() {
   const options = {
     method: "GET",
     // url: "http://localhost:3000/api/v1/blogs/",
-    url: "https://blog-xh2n.onrender.com/api/v1/blogs",
+    // url: "https://blog-xh2n.onrender.com/api/v1/blogs", // render server
+    url: "https://mushy-calf-nightgown.cyclic.app/api/v1/blogs/", // cyclic server
   };
   const getData = async () => {
     const { data } = await axios.request(options);
