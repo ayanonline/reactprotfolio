@@ -8,6 +8,7 @@ import Skills from "./components/skills/Skills";
 import Projects from "./components/myprojects/Projects";
 import Blogs from "./components/myblogs/Blogs";
 import BlogAdmin from "./components/admin/BlogAdmin";
+import Test from "./components/Test";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/rdjislove" element={<BlogAdmin />} />
+        <Route path="/blogs/test" element={<Test />} />
       </Routes>
       <Footer />
     </Router>

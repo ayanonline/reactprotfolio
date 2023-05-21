@@ -20,7 +20,7 @@ function BlogAdmin() {
   useEffect(() => {
     document.title = "Blog-Admin";
     getData();
-  }, [deleteHnadler]);
+  }, []);
 
   const toastOptions = {
     position: "top-right",
@@ -53,6 +53,7 @@ function BlogAdmin() {
     setFile(event.target.files[0]);
   };
 
+  // for creating a new blog
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -67,6 +68,7 @@ function BlogAdmin() {
       body: formData,
     })
       .then((response) => {
+        getData();
         toast("Blog is created successfully✨🎈");
         setAuthor("");
         setTitle("");
@@ -81,10 +83,13 @@ function BlogAdmin() {
         setFile(null);
       });
   };
+
+  // for delete blog
   async function deleteHnadler(id) {
     await axios
       .delete(`https://blog-xh2n.onrender.com/api/v1/blogs/blog/${id}`)
       .then((response) => {
+        getData();
         toast("Blog is deleted");
       })
       .catch((error) => {
