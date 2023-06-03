@@ -30,9 +30,9 @@ function Header() {
             <li>
               <NavLink to="/projects">Projects</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/blogs">Blogs</NavLink>
-            </li>
+            </li> */}
           </ul>
           <button className="btn">Contact me</button>
         </div>
@@ -67,11 +67,11 @@ function Header() {
                 Projects
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink onClick={clichHandle} to="/blogs">
                 Blogs
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       )}

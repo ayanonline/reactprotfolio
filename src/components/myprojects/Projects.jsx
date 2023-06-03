@@ -28,24 +28,24 @@ function Projects() {
       title: "Movie search (React js)",
       details: [],
     },
-    {
-      url: "https://ayan-todo-list.netlify.app/",
-      image: todosnap,
-      title: "TodoApp (React js)",
-      details: [],
-    },
-    {
-      url: "https://library-ayan.netlify.app/",
-      image: librarysnap,
-      title: "Library (React Redux)",
-      details: [],
-    },
-    {
-      url: "https://ayan-keeper.netlify.app/",
-      image: keepersnap,
-      title: "KeeperApp (React js)",
-      details: [],
-    },
+    // {
+    //   url: "https://ayan-todo-list.netlify.app/",
+    //   image: todosnap,
+    //   title: "TodoApp (React js)",
+    //   details: [],
+    // },
+    // {
+    //   url: "https://library-ayan.netlify.app/",
+    //   image: librarysnap,
+    //   title: "Library (React Redux)",
+    //   details: [],
+    // },
+    // {
+    //   url: "https://ayan-keeper.netlify.app/",
+    //   image: keepersnap,
+    //   title: "KeeperApp (React js)",
+    //   details: [],
+    // },
   ]);
   return (
     <div className="recent-project">
