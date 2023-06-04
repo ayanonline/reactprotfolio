@@ -10,6 +10,7 @@ import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 import TopSkills from "../skills/TopSkills";
 import Typewriter from "typewriter-effect";
+import About from "../about/About";
 
 function Home() {
   const socialItem = [
@@ -41,6 +42,7 @@ function Home() {
       </div>
       <RecentProjects />
       <TopSkills />
+      <About />
     </Fragment>
   );
 }
