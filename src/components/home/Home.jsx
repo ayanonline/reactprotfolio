@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./Home.css";
-import mypic from "../../assets/myPhoto.png";
-import mypic2 from "../../assets/about.png";
+import mypic from "../../assets/about.webp";
 import wpIcon from "../../assets/whatsapp.png";
 import gmailIcon from "../../assets/gmail.png";
 import linkedinIcon from "../../assets/linkedin.png";
@@ -9,7 +8,6 @@ import gitHubIcon from "../../assets/github.png";
 import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 import TopSkills from "../skills/TopSkills";
-import Typewriter from "typewriter-effect";
 import About from "../about/About";
 
 function Home() {
@@ -24,7 +22,7 @@ function Home() {
     <Fragment>
       <div className="home-container">
         <div className="image">
-          <img src={mypic2} alt="this is my photo" />
+          <img src={mypic} alt="this is my photo" />
         </div>
 
         <div className="intro">

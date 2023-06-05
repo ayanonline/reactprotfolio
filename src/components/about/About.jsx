@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import ARCIcon from "../../assets/arc.webp";
-import aboutImage from "../../assets/about.png";
+import mypic from "../../assets/about.webp";
 import UniversityIcon from "../../assets/university.webp";
 function About() {
   return (
@@ -9,7 +9,7 @@ function About() {
       <h2>About me</h2>
       <div className="about-container1">
         <div className="imgae-div">
-          <img src={aboutImage} alt="this is an image" />
+          <img src={mypic} alt="this is an image" />
         </div>
         <div className="text-div">
           <div>
