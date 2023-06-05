@@ -8,34 +8,8 @@
   margin: 10px;
 }
 .frame {
+  box-sizing: border-box;
   height: 16.8rem;
-}
-.desktop-frame {
-  position: relative;
-  height: 15.6rem;
-  width: 18.7rem;
-}
-#desktop-image {
-  height: 10.3rem;
-  width: 260px;
-  position: relative;
-  top: 2.7rem;
-  left: 2.8rem;
-}
-.mobile-frame {
-  position: relative;
-  height: 10.6rem;
-  width: 5.6rem;
-  top: -10rem;
-  left: 16.2rem;
-}
-#mobile-image {
-  height: 8.2rem;
-  width: 3.8rem;
-  position: relative;
-  top: 1.2rem;
-  left: 0.9rem;
-  border-radius: 0.5rem;
 }
 
 .Project-card > .about-project {
@@ -48,26 +22,4 @@
 }
 .Project-card > .about-project > h2 {
   padding: 1rem 0;
-}
-
-@media only screen and (max-width: 600px) {
-  #desktop-image {
-    height: 7rem;
-    width: 10.8rem;
-    top: 4.2rem;
-    left: 1.8rem;
-  }
-  .mobile-frame {
-    height: 8rem;
-    width: 5.6rem;
-    top: -10rem;
-    left: 9.5rem;
-  }
-  #mobile-image {
-    height: 6.6rem;
-    width: 3.1rem;
-    top: 0.7rem;
-    left: 1.26rem;
-    border-radius: 0.5rem;
-  }
 }
