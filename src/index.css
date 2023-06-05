@@ -13,12 +13,16 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+  text-align: center;
 }
 .btn:hover {
   color: rgb(68, 68, 68);
   background-color: #fff;
 }
 
+.test {
+  padding: 70px;
+}
 @media only screen and (max-width: 600px) {
   .btn {
     padding: 5px 15px;
