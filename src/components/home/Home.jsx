@@ -9,7 +9,7 @@ import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 import TopSkills from "../skills/TopSkills";
 import About from "../about/About";
-import Contact from "../contact/Contact";
+import { Link } from "react-router-dom";
 
 function Home() {
   const socialItem = [

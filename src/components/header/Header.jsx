@@ -69,11 +69,11 @@ function Header() {
                 Projects
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink onClick={clichHandle} to="/blogs">
-                Blogs
+            <li>
+              <NavLink onClick={clichHandle} to="/contact-me">
+                Contact me
               </NavLink>
-            </li> */}
+            </li>
           </ul>
         </div>
       )}
