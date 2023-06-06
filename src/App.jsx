@@ -8,6 +8,7 @@ import Skills from "./components/skills/Skills";
 import Projects from "./components/myprojects/Projects";
 import Blogs from "./components/myblogs/Blogs";
 import BlogAdmin from "./components/admin/BlogAdmin";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact-me" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/rdjislove" element={<BlogAdmin />} />
       </Routes>

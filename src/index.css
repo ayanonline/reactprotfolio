@@ -19,7 +19,9 @@
   color: rgb(68, 68, 68);
   background-color: #fff;
 }
-
+.disabled {
+  cursor: not-allowed;
+}
 .test {
   padding: 70px;
 }

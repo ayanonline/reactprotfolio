@@ -9,6 +9,7 @@ import SocialBtn from "../socialbutton/SocialBtn";
 import RecentProjects from "../myprojects/recentProjects/RecentProjects";
 import TopSkills from "../skills/TopSkills";
 import About from "../about/About";
+import Contact from "../contact/Contact";
 
 function Home() {
   const socialItem = [
