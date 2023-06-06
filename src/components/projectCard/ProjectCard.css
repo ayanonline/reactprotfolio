@@ -4,12 +4,12 @@
   width: 21.8rem;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
   margin: 10px;
 }
 .frame {
   box-sizing: border-box;
-  height: 16.8rem;
+  height: 14rem;
 }
 
 .Project-card > .about-project {
@@ -22,4 +22,10 @@
 }
 .Project-card > .about-project > h2 {
   padding: 1rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .frame {
+    height: 10rem;
+  }
 }
