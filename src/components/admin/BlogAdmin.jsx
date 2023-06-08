@@ -7,7 +7,7 @@ import axios from "axios";
 function BlogAdmin() {
   const [blogData, setBlogData] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
-  // const [isValid, setIsValid] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
@@ -63,7 +63,7 @@ function BlogAdmin() {
       title.length >= 2 &&
       author.length >= 2 &&
       content.length >= 5 &&
-      file !== ""
+      file !== null
     ) {
       return true;
     } else {
@@ -108,13 +108,16 @@ function BlogAdmin() {
 
   // for delete blog
   async function deleteHnadler(id) {
+    setIsDeleting(true);
     await axios
       .delete(`https://blog-xh2n.onrender.com/api/v1/blogs/blog/${id}`)
       .then((response) => {
+        setIsDeleting(false);
         getData();
         toast("Blog is deleted");
       })
       .catch((error) => {
+        setIsDeleting(false);
         toast(error.message);
       });
   }
@@ -155,6 +158,7 @@ function BlogAdmin() {
           </div>
           <div className="input">
             <button
+              disabled={isUploading || !isValid()}
               className={isValid() && !isUploading ? "btn" : "disable"}
               type="submit"
             >
@@ -162,6 +166,7 @@ function BlogAdmin() {
             </button>
           </div>
         </form>
+
         <div className="display">
           <h2>All blogs</h2>
           {blogData.map((blog, index) => {
