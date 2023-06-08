@@ -9,6 +9,7 @@ import Projects from "./components/myprojects/Projects";
 import Blogs from "./components/myblogs/Blogs";
 import BlogAdmin from "./components/admin/BlogAdmin";
 import Contact from "./components/contact/Contact";
+import NotFoundPage from "./components/notfound/NotFoundPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFoundPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />

@@ -1,0 +1,10 @@
+.error-container {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+}
+.error-container > p {
+  margin: 1rem 0;
+}
