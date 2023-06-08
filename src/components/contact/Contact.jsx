@@ -138,7 +138,7 @@ function Contact() {
             onClick={sendEmail}
             disabled={isSending}
           >
-            Send
+            {isSending ? "Sending" : "Send"}
           </button>
         </form>
       </div>

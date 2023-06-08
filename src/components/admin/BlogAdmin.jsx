@@ -6,6 +6,29 @@ import axios from "axios";
 
 function BlogAdmin() {
   const [blogData, setBlogData] = useState([]);
+  const [isUploading, setIsUploading] = useState(false);
+  // const [isValid, setIsValid] = useState(false);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [content, setContent] = useState("");
+  const [file, setFile] = useState(null);
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+  const handleAuthorChange = (event) => {
+    setAuthor(event.target.value);
+  };
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  // for get all blog
   const options = {
     method: "GET",
     // url: "http://localhost:3000/api/v1/blogs/",
@@ -22,6 +45,7 @@ function BlogAdmin() {
     getData();
   }, []);
 
+  // toast options
   const toastOptions = {
     position: "top-right",
     autoClose: 3000,
@@ -33,55 +57,53 @@ function BlogAdmin() {
     toastStyle: { zIndex: 9999 },
   };
 
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [content, setContent] = useState("");
-  const [file, setFile] = useState(null);
-  const [message, setMessage] = useState("");
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
-  const handleAuthorChange = (event) => {
-    setAuthor(event.target.value);
-  };
-
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
-  };
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
+  //form validation
+  function isValid() {
+    if (
+      title.length >= 2 &&
+      author.length >= 2 &&
+      content.length >= 5 &&
+      file !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   // for creating a new blog
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (isValid()) {
+      setIsUploading(true);
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("author", author);
+      formData.append("content", content);
+      formData.append("photo", file);
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("author", author);
-    formData.append("content", content);
-    formData.append("photo", file);
-
-    fetch("https://blog-xh2n.onrender.com/api/v1/blogs", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        getData();
-        toast("Blog is created successfully✨🎈");
-        setAuthor("");
-        setTitle("");
-        setContent("");
-        setFile(null);
+      fetch("https://blog-xh2n.onrender.com/api/v1/blogs", {
+        method: "POST",
+        body: formData,
       })
-      .catch((error) => {
-        toast(error.message);
-        setAuthor("");
-        setTitle("");
-        setContent("");
-        setFile(null);
-      });
+        .then((response) => {
+          getData();
+          toast("Blog is created successfully✨🎈");
+          setIsUploading(false);
+          setAuthor("");
+          setTitle("");
+          setContent("");
+          setFile(null);
+        })
+        .catch((error) => {
+          setIsUploading(false);
+          toast(error.message);
+          setAuthor("");
+          setTitle("");
+          setContent("");
+          setFile(null);
+        });
+    }
   };
 
   // for delete blog
@@ -132,8 +154,11 @@ function BlogAdmin() {
             <input type="file" id="file" onChange={handleFileChange} />
           </div>
           <div className="input">
-            <button className="btn" type="submit">
-              Upload
+            <button
+              className={isValid() && !isUploading ? "btn" : "disable"}
+              type="submit"
+            >
+              {isUploading ? "Uploading..." : "Upload"}
             </button>
           </div>
         </form>

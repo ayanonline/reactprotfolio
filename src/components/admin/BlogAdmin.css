@@ -56,7 +56,14 @@
   color: #fff;
   background-color: red;
 }
-
+.disable {
+  cursor: not-allowed;
+  padding: 10px 20px;
+  border: 2px solid rgb(68, 68, 68);
+  color: #fff;
+  background-color: rgb(68, 68, 68);
+  border-radius: 5px;
+}
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
