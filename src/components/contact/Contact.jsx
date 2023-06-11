@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import "./Contact.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -50,49 +50,45 @@ function Contact() {
     return true;
   }
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (isValid()) {
       setErrorMessage(null);
       setIsSending(true);
       const id = toast.loading("Sending message...");
-      emailjs
-        .send(
-          "service_74vjq9e",
-          "template_b9pgd6c",
-          formData,
-          "liGdjli7eldVA0cB2"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            toast.update(id, {
-              render: "Message sent successfully",
-              type: "success",
-              isLoading: false,
-              autoClose: 3000,
-            });
-            setFormData(() => {
-              return {
-                user_name: "",
-                user_email: "",
-                user_phone: "",
-                message: "",
-              };
-            });
-            setIsSending(false);
-          },
-          (error) => {
-            setIsSending(false);
-            console.log(error.text);
-            toast.update(id, {
-              render: "Error sending message",
-              type: "error",
-              isLoading: false,
-              autoClose: 3000,
-            });
-          }
-        );
+      try {
+        await axios.post("https://send-mail-oskl.onrender.com/send-email", {
+          to: "ayang7271@gmail.com", // Replace with recipient's email address
+          subject: `Portfolio: New message from ${formData.user_name}`,
+          text: `Name: ${formData.user_name}\nEmail: ${formData.user_email}\nPhone: ${formData.user_phone}\nMessage: ${formData.message}`,
+        });
+        console.log("Email sent successfully!"); // Request was successful
+        toast.update(id, {
+          render: "Message sent successfully",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+        setFormData(() => {
+          return {
+            user_name: "",
+            user_email: "",
+            user_phone: "",
+            message: "",
+          };
+        });
+        setIsSending(false);
+      } catch (error) {
+        console.error("Error sending email:", error); // Handle any errors that occur during the API call
+        setIsSending(false);
+        console.log(error.text);
+        toast.update(id, {
+          render: "Error sending message",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
+      }
     }
   };
 
