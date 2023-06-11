@@ -24,22 +24,38 @@ function Contact() {
   });
 
   const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  function isvalid() {
-    if (
-      formData.user_name !== "" &&
-      formData.user_email !== "" &&
-      formData.user_phone !== "" &&
-      formData.message !== ""
-    ) {
-      return true;
-    } else return false;
+  function isValid() {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re1 = /^[0-9]{10}$/;
+    if (formData.user_name === "") {
+      setErrorMessage("Name is required");
+      return false;
+    }
+    if (!re.test(String(formData.user_email).toLowerCase())) {
+      setErrorMessage("Invalid email address");
+      return false;
+    }
+    if (!re1.test(String(formData.user_phone))) {
+      setErrorMessage("Invalid phone number");
+      return false;
+    }
+
+    if (formData.message === "") {
+      setErrorMessage("Message is required");
+      return false;
+    }
+    return true;
   }
 
   const sendEmail = (e) => {
     e.preventDefault();
-    if (isvalid()) {
+    if (isValid()) {
+      setErrorMessage(null);
       setIsSending(true);
+      const id = toast.loading("Sending message...");
       emailjs
         .send(
           "service_74vjq9e",
@@ -50,7 +66,12 @@ function Contact() {
         .then(
           (result) => {
             console.log(result.text);
-            toast("Message send successfully");
+            toast.update(id, {
+              render: "Message sent successfully",
+              type: "success",
+              isLoading: false,
+              autoClose: 3000,
+            });
             setFormData(() => {
               return {
                 user_name: "",
@@ -64,11 +85,14 @@ function Contact() {
           (error) => {
             setIsSending(false);
             console.log(error.text);
-            toast("Something went wrong");
+            toast.update(id, {
+              render: "Error sending message",
+              type: "error",
+              isLoading: false,
+              autoClose: 3000,
+            });
           }
         );
-    } else {
-      toast("please fill all fields");
     }
   };
 
@@ -133,6 +157,7 @@ function Contact() {
             }}
             value={formData.message}
           />
+          <span className="error-message">{errorMessage && errorMessage}</span>
           <button
             className={isSending ? "disabled btn" : "btn"}
             onClick={sendEmail}

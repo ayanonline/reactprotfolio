@@ -76,6 +76,7 @@ function BlogAdmin() {
     event.preventDefault();
     if (isValid()) {
       setIsUploading(true);
+      const id = toast.loading("Uploading blog...");
       const formData = new FormData();
       formData.append("title", title);
       formData.append("author", author);
@@ -88,7 +89,12 @@ function BlogAdmin() {
       })
         .then((response) => {
           getData();
-          toast("Blog is created successfully✨🎈");
+          toast.update(id, {
+            render: "Blog is created successfully✅",
+            type: "success",
+            isLoading: false,
+            autoClose: 3000,
+          });
           setIsUploading(false);
           setAuthor("");
           setTitle("");
@@ -97,7 +103,12 @@ function BlogAdmin() {
         })
         .catch((error) => {
           setIsUploading(false);
-          toast(error.message);
+          toast.update(id, {
+            render: "Failed to create blog✖",
+            type: "error",
+            isLoading: false,
+            autoClose: 3000,
+          });
           setAuthor("");
           setTitle("");
           setContent("");
@@ -109,16 +120,27 @@ function BlogAdmin() {
   // for delete blog
   async function deleteHnadler(id) {
     setIsDeleting(true);
+    const id1 = toast.loading("Deleting blog...");
     await axios
       .delete(`https://blog-xh2n.onrender.com/api/v1/blogs/blog/${id}`)
       .then((response) => {
         setIsDeleting(false);
         getData();
-        toast("Blog is deleted");
+        toast.update(id1, {
+          render: "Blog is deleted successfully✅",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
       })
       .catch((error) => {
         setIsDeleting(false);
-        toast(error.message);
+        toast.update(id1, {
+          render: "Failed to delete blog✖",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
       });
   }
   return (
