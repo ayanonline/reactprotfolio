@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 import loacationIcon from "../../assets/location.png";
 import callIcon from "../../assets/call.png";
 import gmailIcon from "../../assets/gmail.png";
@@ -26,7 +27,7 @@ function Footer() {
         <div className="inner-left">
           <img src={gmailIcon} alt="an image" className="ficon" />
           <div>
-            <h3>ayanghosh@gmail.com</h3>
+            <h3>ayanghosh1389@gmail.com</h3>
           </div>
         </div>
       </div>
@@ -45,9 +46,9 @@ function Footer() {
           <a href="https://www.linkedin.com/in/ayanonline/">
             <img src={linkedinIcon} alt="an image" className="ficon" />
           </a>
-          <a href="ayanghosh1389@gmail.com">
-            <img src={gmailIcon} alt="an image" className="ficon" />
-          </a>
+          <Link to="/contact-me" className="btn">
+            Contact me
+          </Link>
         </div>
       </div>
     </div>
