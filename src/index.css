@@ -30,8 +30,14 @@ a {
 .test {
   padding: 70px;
 }
+.icon {
+  height: 2rem;
+}
 @media only screen and (max-width: 600px) {
   .btn {
     padding: 5px 15px;
+  }
+  .icon {
+    height: 1.5rem;
   }
 }

@@ -3,7 +3,8 @@ import axios from "axios";
 import "./Contact.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import callMeIcon from "../../assets/callMeOn.svg";
+import emailMeIcon from "../../assets/emailMe.svg";
 function Contact() {
   const toastOptions = {
     position: "top-right",
@@ -97,6 +98,18 @@ function Contact() {
       <ToastContainer {...toastOptions} />
       <div className="contact-container">
         <h2>Contact me</h2>
+        <div className="phone-email">
+          <div className="phone">
+            <img src={callMeIcon} alt="phone icon" className="icon" />
+            <h3>Call Me On</h3>
+            <p>+91 7477446714</p>
+          </div>
+          <div className="email">
+            <img src={emailMeIcon} alt="email icon" className="icon" />
+            <h3>Email Me At</h3>
+            <p>ayanghosh1389@gmail.com</p>
+          </div>
+        </div>
         <form className="contact-form">
           <label>Name</label>
           <input
