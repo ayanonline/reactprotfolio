@@ -27,7 +27,7 @@ function Footer() {
         <div className="inner-left">
           <img src={gmailIcon} alt="an image" className="ficon" />
           <div>
-            <h3>ayanghosh1389@gmail.com</h3>
+            <h3>ayanonlinee@gmail.com</h3>
           </div>
         </div>
       </div>
