@@ -17,6 +17,7 @@
   width: 100%;
   padding: 5px;
   display: flex;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.595);
 }
 .thumbinfo > img {

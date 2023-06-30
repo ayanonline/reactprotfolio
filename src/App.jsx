@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/myprojects/Projects";
 import Blogs from "./components/myblogs/Blogs";
+import BlogInfo from "./components/myblogs/BlogInfo";
 import BlogAdmin from "./components/admin/BlogAdmin";
 import Contact from "./components/contact/Contact";
 import NotFoundPage from "./components/notfound/NotFoundPage";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact-me" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:blogId" element={<BlogInfo />} />
         <Route path="/blogs/rdjislove" element={<BlogAdmin />} />
       </Routes>
       <Footer />

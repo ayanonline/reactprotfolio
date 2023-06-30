@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import BlogCard from "./blogcard/BlogCard";
 import axios from "axios";
 import "./Blog.css";
+import { Link } from "react-router-dom";
+
 function Blogs() {
   const [blogData, setBlogData] = useState([]);
   const options = {
@@ -13,6 +15,7 @@ function Blogs() {
   const getData = async () => {
     const { data } = await axios.request(options);
     setBlogData(data.data);
+    console.log(data.data);
   };
 
   useEffect(() => {
@@ -26,8 +29,10 @@ function Blogs() {
         <h3>Some recent posts</h3>
       </div>
       <div className="blog-container">
-        {blogData.map((blog, index) => (
-          <BlogCard blog={blog} key={index} />
+        {blogData.map((blog) => (
+          <Link to={"/blogs/" + blog._id} key={blog._id}>
+            <BlogCard blog={blog} />
+          </Link>
         ))}
       </div>
     </>

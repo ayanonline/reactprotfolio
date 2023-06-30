@@ -1,4 +1,5 @@
 import React from "react";
+import { AVATAR_URL } from "../../../utils/constant";
 import "./BlogCard.css";
 
 function BlogCard({ blog }) {
@@ -14,10 +15,7 @@ function BlogCard({ blog }) {
         }}
       >
         <div className="thumbinfo">
-          <img
-            src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png"
-            alt="this is image"
-          />
+          <img src={AVATAR_URL} alt="this is image" />
           <div className="innerInfo">
             <h3>{blog.author}</h3>
             <span>{blog.createdAt.slice(0, 10)}</span>
