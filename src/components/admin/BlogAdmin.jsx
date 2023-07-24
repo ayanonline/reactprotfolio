@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./BlogAdmin.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import JoditEditor from "jodit-react";
 
 function BlogAdmin() {
   const [blogData, setBlogData] = useState([]);
@@ -13,6 +14,8 @@ function BlogAdmin() {
   const [content, setContent] = useState("");
   const [file, setFile] = useState(null);
 
+  const editor = useRef(null);
+
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -21,7 +24,8 @@ function BlogAdmin() {
   };
 
   const handleContentChange = (event) => {
-    setContent(event.target.value);
+    // setContent(event.target.value);
+    setContent(event);
   };
 
   const handleFileChange = (event) => {
@@ -168,10 +172,15 @@ function BlogAdmin() {
           </div>
           <div className="input">
             <label htmlFor="content">Content:</label>
-            <textarea
+            {/* <textarea
               id="content"
               value={content}
               onChange={handleContentChange}
+            /> */}
+            <JoditEditor
+              ref={editor}
+              onChange={handleContentChange}
+              value={content}
             />
           </div>
           <div className="input">

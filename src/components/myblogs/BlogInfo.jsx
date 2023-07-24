@@ -50,7 +50,9 @@ const BlogInfo = () => {
           <h3>{author}</h3>|<h3> {date}</h3>
         </div>
         <div className="blog-content">
-          <p>{content}</p>
+          {/* <p>{content}</p> */}
+
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </div>
       </div>
       <div className="recent-blog-container">

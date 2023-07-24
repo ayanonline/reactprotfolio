@@ -32,6 +32,9 @@ function Header() {
             </li>
             {/* <li>
               <NavLink to="/blogs">Blogs</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blogs/rdjislove">BlogsAdmin</NavLink>
             </li> */}
           </ul>
           <NavLink to="/contact-me">

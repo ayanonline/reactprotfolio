@@ -29,7 +29,12 @@ function BlogCard({ blog }) {
             ? blog.title
             : blog.title.slice(0, 12) + "..."}
         </h2>
-        <p>{blog.content.slice(0, 150) + "..."}</p>
+        {/* <p>{blog.content.slice(0, 150) + "..."}</p> */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: blog.content.slice(0, 150) + "...",
+          }}
+        ></div>
         <button className="btn">Read more</button>
       </div>
     </div>
