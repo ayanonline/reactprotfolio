@@ -16,12 +16,12 @@ const projects = [
     image: ytdownload,
     link: "https://yt-download-ayan.netlify.app/",
   },
-  {
-    title: "Movie serch",
-    desc: `I build this using simple free movie api, where you can serach movie by it's name. It also have "add to favourite" feature.`,
-    image: movie,
-    link: "https://ayan-movie.netlify.app/",
-  },
+  // {
+  //   title: "Movie serch",
+  //   desc: `I build this using simple free movie api, where you can serach movie by it's name. It also have "add to favourite" feature.`,
+  //   image: movie,
+  //   link: "https://ayan-movie.netlify.app/",
+  // },
   {
     title: "GYM",
     desc: "I have created fronted of this GYM website.",
