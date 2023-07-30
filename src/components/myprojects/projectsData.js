@@ -1,8 +1,15 @@
 import ytdownload from "../../assets/ytdownload.webp";
+import myyoutube from "../../assets/my-youtube.webp";
 import movie from "../../assets/movie.webp";
 import kgf from "../../assets/kgf.webp";
 
 const projects = [
+  {
+    title: "Youtube Clone",
+    desc: `I have created this Youtube clone app using REACT JS, redux-tool-kit, react-router-dom, tailwindCSS`,
+    image: myyoutube,
+    link: "https://youtube-ayan.netlify.app/",
+  },
   {
     title: "Youtube video Downloader",
     desc: `I have created this youtube video downloader app using REACT JS & EXPRESS . In backend I used "ytdl-core" npm package.`,
