@@ -43,7 +43,7 @@ function Footer() {
           <a href="https://github.com/ayanonline">
             <img src={gitHubIcon} alt="an image" className="ficon" />
           </a>
-          <a href="https://www.linkedin.com/in/ayanonline/">
+          <a href="https://www.linkedin.com/in/ayanghoshdev/">
             <img src={linkedinIcon} alt="an image" className="ficon" />
           </a>
           <Link to="/contact-me" className="btn">

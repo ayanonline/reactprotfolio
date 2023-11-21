@@ -15,7 +15,7 @@ function Home() {
   const socialItem = [
     { img: wpIcon, url: "https://wa.me/7477446714?text=" },
     { img: gmailIcon, url: "ayanghosh.dev@gmail.com" },
-    { img: linkedinIcon, url: "https://www.linkedin.com/in/ayanonline/" },
+    { img: linkedinIcon, url: "https://www.linkedin.com/in/ayanghoshdev/" },
     { img: gitHubIcon, url: "https://github.com/ayanonline" },
   ];
 
