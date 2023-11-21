@@ -59,7 +59,7 @@ function Contact() {
       const id = toast.loading("Sending message...");
       try {
         await axios.post("https://send-mail-oskl.onrender.com/send-email", {
-          to: "ayanonlinee@gmail.com", // Replace with recipient's email address
+          to: "ayanghosh.dev@gmail.com", // Replace with recipient's email address
           subject: `Portfolio: New message from ${formData.user_name}`,
           text: `Name: ${formData.user_name}\nEmail: ${formData.user_email}\nPhone: ${formData.user_phone}\nMessage: ${formData.message}`,
         });
@@ -107,7 +107,7 @@ function Contact() {
           <div className="email">
             <img src={emailMeIcon} alt="email icon" className="icon" />
             <h3>Email Me At</h3>
-            <p>ayanonlinee@gmail.com</p>
+            <p>ayanghosh.dev@gmail.com</p>
           </div>
         </div>
         <form className="contact-form">

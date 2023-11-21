@@ -63,7 +63,7 @@ function About() {
               <br />
               <b>Phone No:</b> 7477446714
               <br />
-              <b>Email:</b> ayanonlinee@gmail.com
+              <b>Email:</b> ayanghosh.dev@gmail.com
             </p>
           </div>
         </div>
